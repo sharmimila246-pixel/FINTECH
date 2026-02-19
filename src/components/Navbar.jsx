@@ -41,10 +41,10 @@ const Navbar = ({ onSearch, user, onLogout }) => {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2 outline-none">
-                    <div className="w-10 h-10 vibrant-gradient rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-200">
+                    <div className="w-10 h-10 vibrant-gradient rounded-xl flex items-center justify-center text-[#2C1810] font-bold text-xl shadow-lg shadow-yellow-900/50">
                         A
                     </div>
-                    <span className="text-2xl font-black bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent hidden sm:block">
+                    <span className="text-2xl font-black bg-gradient-to-r from-[#F4B400] to-[#F5E6D3] bg-clip-text text-transparent hidden sm:block">
                         AESTHETIQ
                     </span>
                 </Link>
@@ -63,7 +63,7 @@ const Navbar = ({ onSearch, user, onLogout }) => {
                     <input
                         type="text"
                         placeholder="Search for premium products..."
-                        className="w-full bg-slate-100/50 border border-slate-200 rounded-full py-2 pl-4 pr-12 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all"
+                        className="w-full bg-[#F5E6D3] border border-[#D4A574] rounded-full py-2 pl-4 pr-12 focus:outline-none focus:ring-2 focus:ring-[#F4B400] focus:bg-[#F5E6D3] transition-all text-[#2C1810]"
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
@@ -77,22 +77,22 @@ const Navbar = ({ onSearch, user, onLogout }) => {
 
                 {/* Actions */}
                 <div className="flex items-center space-x-4">
-                    <button className="p-2 text-slate-600 hover:text-indigo-600 transition-colors relative">
+                    <button className="p-2 text-[#F5E6D3] hover:text-[#F4B400] transition-colors relative">
                         <ShoppingCart className="w-6 h-6" />
-                        <span className="absolute top-0 right-0 w-4 h-4 bg-pink-500 text-white text-[10px] flex items-center justify-center rounded-full border-2 border-white">2</span>
+                        <span className="absolute top-0 right-0 w-4 h-4 bg-[#F4B400] text-[#2C1810] text-[10px] flex items-center justify-center rounded-full border-2 border-[#5C3317]">2</span>
                     </button>
 
                     {user ? (
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}
-                                className="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full transition-all active:scale-95 group"
+                                className="flex items-center space-x-2 bg-[#7A4A21] hover:bg-[#5C3317] px-4 py-2 rounded-full transition-all active:scale-95 group"
                             >
                                 <div className="w-8 h-8 vibrant-gradient rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white shadow-sm">
                                     {user.name.charAt(0)}
                                 </div>
-                                <span className="font-bold text-slate-700 hidden sm:block">{user.id}</span>
-                                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${isProfileOpen ? 'rotate-180' : ''}`} />
+                                <span className="font-bold text-[#F5E6D3] hidden sm:block">{user.id}</span>
+                                <ChevronDown className={`w-4 h-4 text-[#F5E6D3] transition-transform duration-300 ${isProfileOpen ? 'rotate-180' : ''}`} />
                             </button>
 
                             <AnimatePresence>
@@ -101,11 +101,11 @@ const Navbar = ({ onSearch, user, onLogout }) => {
                                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        className="absolute right-0 mt-3 w-64 bg-white rounded-3xl shadow-2xl border border-slate-100 p-2 overflow-hidden z-50"
+                                        className="absolute right-0 mt-3 w-64 bg-[#F5E6D3] rounded-3xl shadow-2xl border border-[#D4A574] p-2 overflow-hidden z-50"
                                     >
-                                        <div className="px-4 py-3 border-b border-slate-50 mb-2">
-                                            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Logged in as</p>
-                                            <p className="text-sm font-black text-slate-800 truncate">{user.email}</p>
+                                        <div className="px-4 py-3 border-b border-[#EFE2D1] mb-2">
+                                            <p className="text-xs font-bold text-[#7A4A21] uppercase tracking-widest">Logged in as</p>
+                                            <p className="text-sm font-black text-[#2C1810] truncate">{user.email}</p>
                                         </div>
 
                                         <DropdownItem icon={<UserCircle />} label="Profile" onClick={() => setIsProfileOpen(false)} />
@@ -113,7 +113,7 @@ const Navbar = ({ onSearch, user, onLogout }) => {
                                         <DropdownItem icon={<Truck />} label="Track Order" onClick={() => setIsProfileOpen(false)} />
                                         <DropdownItem icon={<HelpCircle />} label="Help & Support" onClick={() => setIsProfileOpen(false)} />
 
-                                        <div className="mt-2 pt-2 border-t border-slate-50">
+                                        <div className="mt-2 pt-2 border-t border-[#EFE2D1]">
                                             <button
                                                 onClick={handleLogout}
                                                 className="w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-red-500 hover:bg-red-50 transition-colors font-bold"
@@ -127,14 +127,14 @@ const Navbar = ({ onSearch, user, onLogout }) => {
                             </AnimatePresence>
                         </div>
                     ) : (
-                        <Link to="/login" className="hidden sm:flex items-center space-x-2 bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition-all hover:shadow-lg hover:shadow-indigo-200 active:scale-95">
+                        <Link to="/login" className="hidden sm:flex items-center space-x-2 bg-[#F4B400] text-[#2C1810] px-5 py-2 rounded-full font-semibold hover:bg-[#D89C00] transition-all hover:shadow-lg hover:shadow-yellow-900/50 active:scale-95">
                             <User className="w-4 h-4" />
                             <span>Login</span>
                         </Link>
                     )}
 
                     <button
-                        className="lg:hidden p-2 text-slate-600"
+                        className="lg:hidden p-2 text-[#F5E6D3]"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -144,7 +144,7 @@ const Navbar = ({ onSearch, user, onLogout }) => {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 p-6 flex flex-col space-y-4 shadow-xl animate-in fade-in slide-in-from-top-4">
+                <div className="lg:hidden absolute top-full left-0 w-full bg-gradient-to-r from-[#3E1F0D] to-[#5C3317] border-t border-[#7A4A21] p-6 flex flex-col space-y-4 shadow-xl animate-in fade-in slide-in-from-top-4">
                     <NavLink to="/" icon={<Home className="w-4 h-4" />} label="Home" onClick={() => setIsMenuOpen(false)} />
                     <NavLink to="#" icon={<Percent className="w-4 h-4" />} label="Special Deals" onClick={() => setIsMenuOpen(false)} />
                     <div className="relative mt-2">
@@ -152,18 +152,18 @@ const Navbar = ({ onSearch, user, onLogout }) => {
                             <input
                                 type="text"
                                 placeholder="Search..."
-                                className="w-full bg-slate-100 border border-slate-200 rounded-lg py-2 pl-4 pr-10"
+                                className="w-full bg-[#F5E6D3] border border-[#D4A574] rounded-lg py-2 pl-4 pr-10 text-[#2C1810]"
                                 value={searchValue}
                                 onChange={(e) => setSearchValue(e.target.value)}
                             />
                             <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2">
-                                <Search className="w-5 h-5 text-slate-400" />
+                                <Search className="w-5 h-5 text-[#7A4A21]" />
                             </button>
                         </form>
                     </div>
                     {user ? (
-                        <div className="space-y-2 pt-4 border-t border-slate-100">
-                            <p className="px-4 text-xs font-bold text-slate-400 uppercase">Account</p>
+                        <div className="space-y-2 pt-4 border-t border-[#7A4A21]">
+                            <p className="px-4 text-xs font-bold text-[#F5E6D3] uppercase">Account</p>
                             <div className="grid grid-cols-2 gap-2">
                                 <MobileNavItem label="Profile" onClick={() => setIsMenuOpen(false)} />
                                 <MobileNavItem label="Orders" onClick={() => setIsMenuOpen(false)} />
@@ -196,7 +196,7 @@ const NavLink = ({ to, icon, label, onClick }) => (
     <Link
         to={to}
         onClick={onClick}
-        className="flex items-center space-x-2 font-medium transition-colors text-slate-600 hover:text-indigo-600"
+        className="flex items-center space-x-2 font-medium transition-colors text-[#F5E6D3] hover:text-[#F4B400]"
     >
         {icon}
         <span>{label}</span>
@@ -206,9 +206,9 @@ const NavLink = ({ to, icon, label, onClick }) => (
 const DropdownItem = ({ icon, label, onClick }) => (
     <button
         onClick={onClick}
-        className="w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition-all font-bold group"
+        className="w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-[#2C1810] hover:bg-[#EFE2D1] hover:text-[#F4B400] transition-all font-bold group"
     >
-        <span className="text-slate-400 group-hover:text-indigo-500 transition-colors">
+        <span className="text-[#7A4A21] group-hover:text-[#F4B400] transition-colors">
             {React.cloneElement(icon, { className: 'w-5 h-5' })}
         </span>
         <span>{label}</span>
@@ -218,7 +218,7 @@ const DropdownItem = ({ icon, label, onClick }) => (
 const MobileNavItem = ({ label, onClick }) => (
     <button
         onClick={onClick}
-        className="px-4 py-2 bg-slate-50 text-slate-600 rounded-lg text-sm font-bold active:bg-slate-100"
+        className="px-4 py-2 bg-[#7A4A21] text-[#F5E6D3] rounded-lg text-sm font-bold active:bg-[#5C3317]"
     >
         {label}
     </button>

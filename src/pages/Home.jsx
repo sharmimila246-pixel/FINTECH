@@ -32,7 +32,7 @@ const Home = ({ searchResults }) => {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-[60vh]">
-                <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-12 h-12 border-4 border-[#F4B400] border-t-transparent rounded-full animate-spin"></div>
             </div>
         );
     }
@@ -53,16 +53,16 @@ const Home = ({ searchResults }) => {
 
                     <div className="relative h-full flex flex-col justify-center px-12 max-w-2xl text-white space-y-6">
                         <div className="flex items-center space-x-2 bg-white/20 backdrop-blur w-fit px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest border border-white/30">
-                            <Sparkles className="w-4 h-4 text-amber-400" />
+                            <Sparkles className="w-4 h-4 text-[#F4B400]" />
                             <span>Limited Time Offers</span>
                         </div>
                         <h1 className="text-6xl font-black leading-tight">
-                            Empowering Rural Women Entrepreneurs<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400"></span>
+                            Empowering Rural Women Entrepreneurs<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F4B400] to-[#F5E6D3]"></span>
                         </h1>
                         <p className="text-xl text-slate-300 font-medium">
                            Discover authentic handmade, organic, and locally crafted products directly from talented women artisans across rural India.
                         </p>
-                        <button className="vibrant-gradient px-8 py-4 rounded-2xl font-black text-lg flex items-center space-x-3 w-fit hover:shadow-2xl hover:shadow-indigo-500/50 transition-all hover:-translate-y-1 active:scale-95">
+                        <button className="vibrant-gradient px-8 py-4 rounded-2xl font-black text-lg flex items-center space-x-3 w-fit text-[#2C1810] hover:shadow-2xl hover:shadow-yellow-900/50 transition-all hover:-translate-y-1 active:scale-95">
                             <span>Shop Deals</span>
                             <ArrowRight className="w-5 h-5" />
                         </button>
@@ -74,17 +74,17 @@ const Home = ({ searchResults }) => {
             <section className="max-w-7xl mx-auto px-4">
                 <div className="flex items-end justify-between mb-12">
                     <div>
-                        <h2 className="text-4xl font-black text-slate-800 tracking-tight">
+                        <h2 className="text-4xl font-black text-[#F5E6D3] tracking-tight">
                             {searchResults ? `Search Results for "${searchResults.query}"` : 'Our Collection'}
                         </h2>
-                        <p className="text-slate-500 font-medium mt-2">Only the finest selection for you.</p>
+                        <p className="text-[#E6D5C3] font-medium mt-2">Only the finest selection for you.</p>
                     </div>
-                    <div className="hidden sm:flex items-center space-x-2 text-slate-400 font-bold">
-                        <span className="text-indigo-600">All Products</span>
+                    <div className="hidden sm:flex items-center space-x-2 text-[#E6D5C3] font-bold">
+                        <span className="text-[#F4B400]">All Products</span>
                         <span>/</span>
-                        <span className="hover:text-slate-600 transition-colors cursor-pointer">Electronics</span>
+                        <span className="hover:text-[#F5E6D3] transition-colors cursor-pointer">Electronics</span>
                         <span>/</span>
-                        <span className="hover:text-slate-600 transition-colors cursor-pointer">Design</span>
+                        <span className="hover:text-[#F5E6D3] transition-colors cursor-pointer">Design</span>
                     </div>
                 </div>
 
@@ -95,8 +95,8 @@ const Home = ({ searchResults }) => {
                 </div>
 
                 {products.length === 0 && (
-                    <div className="text-center py-20 bg-white/50 rounded-[40px] border-2 border-dashed border-slate-200">
-                        <p className="text-2xl font-bold text-slate-400">No products found matching your search.</p>
+                    <div className="text-center py-20 bg-[#F5E6D3]/20 rounded-[40px] border-2 border-dashed border-[#D4A574]">
+                        <p className="text-2xl font-bold text-[#E6D5C3]">No products found matching your search.</p>
                     </div>
                 )}
             </section>

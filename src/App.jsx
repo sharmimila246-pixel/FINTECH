@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import SellerApplication from './pages/SellerApplication';
 import axios from 'axios';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home searchResults={searchResults ? searchResults.products : null} />} />
             <Route path="/login" element={<Login onLogin={loginUser} />} />
+            <Route path="/seller-application" element={<SellerApplication />} />
           </Routes>
         </main>
 
@@ -56,23 +58,23 @@ function App() {
                 </span>
               </div>
               <p className="text-slate-500 text-sm">
-                The world's most premium digital marketplace for high-end lifestyle essentials.
+                Empowering rural India through authentic, handmade, and organic products.
               </p>
             </div>
             <div>
               <h4 className="font-bold mb-4 text-slate-800">Shop</h4>
               <ul className="text-slate-500 text-sm space-y-2">
-                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Electronics</li>
-                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Accessories</li>
-                <li className="hover:text-indigo-600 cursor-pointer transition-colors">New Arrivals</li>
+                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Organic Food</li>
+                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Handicrafts</li>
+                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Women's Wear</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-slate-800">Company</h4>
+              <h4 className="font-bold mb-4 text-slate-800">For Sellers</h4>
               <ul className="text-slate-500 text-sm space-y-2">
-                <li className="hover:text-indigo-600 cursor-pointer transition-colors">About Us</li>
-                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Careers</li>
-                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Journal</li>
+                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Become a Seller</li>
+                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Seller Dashboard</li>
+                <li className="hover:text-indigo-600 cursor-pointer transition-colors">Artisan Stories</li>
               </ul>
             </div>
             <div>

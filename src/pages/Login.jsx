@@ -13,7 +13,6 @@ const Login = ({ onLogin }) => {
         e.preventDefault();
         console.log(`Logging in as ${role}:`, { email, password });
 
-        // Simulate user data based on email prefix or generic ID
         const userId = email.split('@')[0] || 'User123';
         const userData = {
             id: userId,
@@ -24,12 +23,11 @@ const Login = ({ onLogin }) => {
 
         onLogin(userData);
 
-        // Logic for redirection
         if (role === 'customer') {
             navigate('/');
         } else {
-            alert('Seller login successful! (Seller Dashboard coming soon)');
-            navigate('/');
+            // Redirect sellers to the application form
+            navigate('/seller-application');
         }
     };
 
@@ -40,7 +38,6 @@ const Login = ({ onLogin }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="glass w-full max-w-md p-8 rounded-[40px] shadow-2xl relative overflow-hidden"
             >
-                {/* Decorative Background */}
                 <div className="absolute top-0 right-0 w-32 h-32 vibrant-gradient opacity-10 blur-3xl -mr-16 -mt-16 rounded-full"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 vibrant-gradient opacity-10 blur-3xl -ml-16 -mb-16 rounded-full"></div>
 
@@ -52,7 +49,6 @@ const Login = ({ onLogin }) => {
                     <p className="text-slate-500 mt-2 font-medium">Join the elite marketplace.</p>
                 </div>
 
-                {/* Role Selection */}
                 <div className="flex bg-slate-100 p-1.5 rounded-2xl mb-8">
                     <button
                         onClick={() => setRole('customer')}
@@ -107,14 +103,6 @@ const Login = ({ onLogin }) => {
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-between text-sm px-1">
-                        <label className="flex items-center space-x-2 font-medium text-slate-600 cursor-pointer">
-                            <input type="checkbox" className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-400" />
-                            <span>Remember me</span>
-                        </label>
-                        <a href="#" className="font-bold text-indigo-600 hover:text-indigo-700 transition-colors">Forgot Password?</a>
-                    </div>
-
                     <button
                         type="submit"
                         className="w-full vibrant-gradient text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-indigo-100 flex items-center justify-center space-x-2 hover:-translate-y-1 transition-all active:scale-95"
@@ -123,11 +111,6 @@ const Login = ({ onLogin }) => {
                         <ArrowRight className="w-5 h-5" />
                     </button>
                 </form>
-
-                <div className="mt-8 text-center text-slate-500 font-medium">
-                    Don't have an account? {' '}
-                    <a href="#" className="text-indigo-600 font-black hover:underline underline-offset-4">Sign Up</a>
-                </div>
             </motion.div>
         </div>
     );

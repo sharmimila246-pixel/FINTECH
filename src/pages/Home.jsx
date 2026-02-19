@@ -57,10 +57,10 @@ const Home = ({ searchResults }) => {
                             <span>Limited Time Offers</span>
                         </div>
                         <h1 className="text-6xl font-black leading-tight">
-                            Elevate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400">Digital Life</span>
+                            Empowering Rural Women Entrepreneurs<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400">Digital Life</span>
                         </h1>
                         <p className="text-xl text-slate-300 font-medium">
-                            Discover our curated collection of premium gadgets and lifestyle essentials.
+                           Discover authentic handmade, organic, and locally crafted products directly from talented women artisans across rural India.
                         </p>
                         <button className="vibrant-gradient px-8 py-4 rounded-2xl font-black text-lg flex items-center space-x-3 w-fit hover:shadow-2xl hover:shadow-indigo-500/50 transition-all hover:-translate-y-1 active:scale-95">
                             <span>Shop Deals</span>

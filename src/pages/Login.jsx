@@ -38,38 +38,40 @@ const Login = ({ onLogin }) => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass w-full max-w-md p-8 rounded-[40px] shadow-2xl relative overflow-hidden"
+                className="bg-[#EFE2D1] w-full max-w-md p-8 rounded-[40px] shadow-2xl relative overflow-hidden border border-[#D4A574]"
             >
                 {/* Decorative Background */}
-                <div className="absolute top-0 right-0 w-32 h-32 vibrant-gradient opacity-10 blur-3xl -mr-16 -mt-16 rounded-full"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 vibrant-gradient opacity-10 blur-3xl -ml-16 -mb-16 rounded-full"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 vibrant-gradient opacity-20 blur-3xl -mr-16 -mt-16 rounded-full"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 vibrant-gradient opacity-20 blur-3xl -ml-16 -mb-16 rounded-full"></div>
 
                 <div className="text-center mb-10 relative">
-                    <div className="w-16 h-16 vibrant-gradient rounded-2xl mx-auto flex items-center justify-center text-white font-black text-2xl mb-4 shadow-lg">
+                    <div className="w-16 h-16 vibrant-gradient rounded-2xl mx-auto flex items-center justify-center text-[#2C1810] font-black text-2xl mb-4 shadow-lg shadow-yellow-900/30">
                         A
                     </div>
-                    <h2 className="text-3xl font-black text-slate-800">Welcome Back</h2>
-                    <p className="text-slate-500 mt-2 font-medium">Join the elite marketplace.</p>
+                    <h2 className="text-3xl font-black text-[#2C1810]">Welcome Back</h2>
+                    <p className="text-[#7A4A21] mt-2 font-medium">Join the elite marketplace.</p>
                 </div>
 
                 {/* Role Selection */}
-                <div className="flex bg-slate-100 p-1.5 rounded-2xl mb-8">
+                <div className="flex bg-[#D4A574]/30 p-1.5 rounded-2xl mb-8">
                     <button
                         onClick={() => setRole('customer')}
-                        className={`flex-1 py-3 px-4 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 ${role === 'customer'
-                                ? 'bg-white text-indigo-600 shadow-sm'
-                                : 'text-slate-500 hover:text-slate-700'
-                            }`}
+                        className={`flex-1 py-3 px-4 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 ${
+                            role === 'customer'
+                                ? 'bg-[#F4B400] text-[#2C1810] shadow-md'
+                                : 'text-[#7A4A21] hover:text-[#2C1810]'
+                        }`}
                     >
                         <User className="w-4 h-4" />
                         <span>Customer</span>
                     </button>
                     <button
                         onClick={() => setRole('seller')}
-                        className={`flex-1 py-3 px-4 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 ${role === 'seller'
-                                ? 'bg-white text-indigo-600 shadow-sm'
-                                : 'text-slate-500 hover:text-slate-700'
-                            }`}
+                        className={`flex-1 py-3 px-4 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 ${
+                            role === 'seller'
+                                ? 'bg-[#F4B400] text-[#2C1810] shadow-md'
+                                : 'text-[#7A4A21] hover:text-[#2C1810]'
+                        }`}
                     >
                         <ShieldCheck className="w-4 h-4" />
                         <span>Seller</span>
@@ -78,13 +80,13 @@ const Login = ({ onLogin }) => {
 
                 <form onSubmit={handleLogin} className="space-y-6">
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700 ml-1">Email Address</label>
+                        <label className="text-sm font-bold text-[#2C1810] ml-1">Email Address</label>
                         <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#7A4A21]" />
                             <input
                                 type="email"
                                 required
-                                className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all"
+                                className="w-full bg-white border border-[#D4A574] rounded-2xl py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#F4B400] focus:bg-white transition-all text-[#2C1810]"
                                 placeholder="hello@example.com"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -93,13 +95,13 @@ const Login = ({ onLogin }) => {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700 ml-1">Password</label>
+                        <label className="text-sm font-bold text-[#2C1810] ml-1">Password</label>
                         <div className="relative">
-                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#7A4A21]" />
                             <input
                                 type="password"
                                 required
-                                className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all"
+                                className="w-full bg-white border border-[#D4A574] rounded-2xl py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#F4B400] focus:bg-white transition-all text-[#2C1810]"
                                 placeholder="••••••••"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
@@ -108,25 +110,25 @@ const Login = ({ onLogin }) => {
                     </div>
 
                     <div className="flex items-center justify-between text-sm px-1">
-                        <label className="flex items-center space-x-2 font-medium text-slate-600 cursor-pointer">
-                            <input type="checkbox" className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-400" />
+                        <label className="flex items-center space-x-2 font-medium text-[#7A4A21] cursor-pointer">
+                            <input type="checkbox" className="w-4 h-4 rounded border-[#D4A574] text-[#F4B400] focus:ring-[#F4B400]" />
                             <span>Remember me</span>
                         </label>
-                        <a href="#" className="font-bold text-indigo-600 hover:text-indigo-700 transition-colors">Forgot Password?</a>
+                        <a href="#" className="font-bold text-[#F4B400] hover:text-[#D89C00] transition-colors">Forgot Password?</a>
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full vibrant-gradient text-white py-4 rounded-2xl font-black text-lg shadow-xl shadow-indigo-100 flex items-center justify-center space-x-2 hover:-translate-y-1 transition-all active:scale-95"
+                        className="w-full vibrant-gradient text-[#2C1810] py-4 rounded-2xl font-black text-lg shadow-xl shadow-yellow-900/30 flex items-center justify-center space-x-2 hover:-translate-y-1 transition-all active:scale-95"
                     >
                         <span>Login as {role.charAt(0).toUpperCase() + role.slice(1)}</span>
                         <ArrowRight className="w-5 h-5" />
                     </button>
                 </form>
 
-                <div className="mt-8 text-center text-slate-500 font-medium">
+                <div className="mt-8 text-center text-[#7A4A21] font-medium">
                     Don't have an account? {' '}
-                    <a href="#" className="text-indigo-600 font-black hover:underline underline-offset-4">Sign Up</a>
+                    <a href="#" className="text-[#F4B400] font-black hover:underline underline-offset-4">Sign Up</a>
                 </div>
             </motion.div>
         </div>

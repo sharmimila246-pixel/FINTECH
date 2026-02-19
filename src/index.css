@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --primary: #6366f1;
-  --secondary: #ec4899;
-  --accent: #f59e0b;
+  --primary: #3E1F0D;
+  --secondary: #F5E6D3;
+  --accent: #F4B400;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 font-sans antialiased;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  @apply text-white font-sans antialiased;
+  background: linear-gradient(135deg, #3E1F0D 0%, #5C3317 100%);
   min-height: 100vh;
 }
 
 .glass {
-  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  @apply bg-gradient-to-r from-[#3E1F0D] to-[#5C3317] backdrop-blur-md border border-[#7A4A21] shadow-xl;
 }
 
 .vibrant-gradient {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, #F4B400, #D89C00);
 }
 
 .hover-scale {

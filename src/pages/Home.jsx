@@ -57,7 +57,7 @@ const Home = ({ searchResults }) => {
                             <span>Limited Time Offers</span>
                         </div>
                         <h1 className="text-6xl font-black leading-tight">
-                            Empowering Rural Women Entrepreneurs<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400">Digital Life</span>
+                            Empowering Rural Women Entrepreneurs<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400"></span>
                         </h1>
                         <p className="text-xl text-slate-300 font-medium">
                            Discover authentic handmade, organic, and locally crafted products directly from talented women artisans across rural India.
